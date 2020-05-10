@@ -16,6 +16,8 @@
 
   <script>
 
+    // https://learn.javascript.ru/native-prototypes#tasks
+
     Function.prototype.defer = function(ms) {
       let f = this;
       return function(...args) {
@@ -24,12 +26,12 @@
     };
 
     //  check it
-    function f(a, b) {
+    function fab(a, b) {
       alert( a + b )
     }
 
-    f.defer(1000)(1, 2);
-    
+    fab.defer(1000)(1, 2);
+
   </script>
 
   <script>
