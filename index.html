@@ -7,43 +7,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <div class="main container">
     <input id = "elem" value = "hello">
 
 
   </div>
-
-
-  <script>
-    let elem = document.getElementById('elem')
-
-    function func(surname, name) {
-      console.log(this.value + ', ' + surname + ' ' + name)
-    }  
-
-    func = func.bind(elem)
-
-    func('Sasha', "Holovach")
-  </script>
-
-  <script>
-    class User {
-      constructor(name, surname) {
-        this.name = name;
-        this.surname = surname;
-      }
-
-      getFullName() {
-        return this.name + ' ' + this.surname;
-      }
-    }
-
-    var user = new User('Vasya', 'Ivanov')
-    // alert(user.name)
-    user.name = 'Sasha'
-    // alert(user.getFullName())
-
-  </script>
 
   <script>
     class Worker {
@@ -102,7 +71,7 @@
 
     worker.setDays(20)
     worker.setRate(10)
-    alert(worker.getSalary())
+    console.log(worker.getSalary())
   </script>
 </body>
 </html>
