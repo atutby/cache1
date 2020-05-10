@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main container">
+    <input id = "elem" value = "hello">
+
+
+  </div>
+
+
+  <script>
+    let elem = document.getElementById('elem')
+
+    function func(surname, name) {
+      console.log(this.value + ', ' + surname + ' ' + name)
+    }  
+
+    func = func.bind(elem)
+
+    func('Sasha', "Holovach")
+  </script>
+
+  <script>
+    class User {
+      constructor(name, surname) {
+        this.name = name;
+        this.surname = surname;
+      }
+
+      getFullName() {
+        return this.name + ' ' + this.surname;
+      }
+    }
+
+    var user = new User('Vasya', 'Ivanov')
+    // alert(user.name)
+    user.name = 'Sasha'
+    // alert(user.getFullName())
+
+  </script>
+
+  <script>
+    class Worker {
+      constructor(name, surname, rate, days) {
+        this._name = name;
+        this._surname = surname;
+        this._rate = rate;
+        this._days = days;
+      }
+
+      getName() {
+        return this._name
+      }
+
+      getSurname() {
+        return this._surname
+      }
+
+      setRate(rate) {
+        this._rate = rate
+      }
+
+       getRate() {
+         return this._rate
+       }
+
+       setDays(days) {
+         this._days = days
+       }
+
+       getDays() {
+         return this._days
+       }
+
+       getSalary() {
+         return this._rate * this._days
+       }
+     }
+
+
+    var worker = new Worker('Иван', 'Иванов', 10, 31);
+    var worker2 = new Worker('Sasha', 'Halavach', 10, 7);
+
+    // console.log(worker.name); //выведет 'Иван'
+    // console.log(worker.surname); //выведет 'Иванов'
+    // console.log(worker.rate); //выведет 10
+    // console.log(worker.days); //выведет 31
+    // console.log(worker.getSalary()); //выведет 310 - то есть 10*31
+    // console.log(worker.getSalary() + worker2.getSalary())
+
+    console.log(worker.getName()); //выведет 'Иван'
+    console.log(worker.getSurname()); //выведет 'Иванов'
+    console.log(worker.getRate()); //выведет 10
+    console.log(worker.getDays()); //выведет 31
+    console.log(worker.getSalary()); //выведет 310 - то есть 10*31
+
+    worker.setDays(20)
+    worker.setRate(10)
+    alert(worker.getSalary())
+  </script>
+</body>
+</html>
