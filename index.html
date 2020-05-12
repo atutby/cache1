@@ -43,6 +43,14 @@
       ucFirst(str) {
         return str[0].toUpperCase() + str.split('').splice(1).join('')
       }
+
+      ucWords(str) {
+        let str2 = ''
+        str.split(' ').forEach( (elem) => 
+          str2 = str2 + elem[0].toUpperCase() + elem.split('').splice(1).join('') + " "
+        )
+        return str2
+      }
     }
 
 
@@ -51,6 +59,9 @@
 
     console.log(str.reverse('abcde'))
     console.log(str.ucFirst('abcde'))
+    console.log(str.ucWords('abcde abcde abcde'))
 </script>
+
+
 </body>
 </html>
