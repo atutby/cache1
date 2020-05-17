@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clock</title>
+  <link rel="stylesheet" href="style-button.css">
 </head>
 <body>
   <h1>Hello Clock</h1>
+  <a class="button1" href="https://learn.javascript.ru/class">https://learn.javascript.ru/class</a>
+
   <script>
       function Clock({ template }) {
   
@@ -27,14 +30,14 @@
     let output = template
       .replace('h', hours)
       .replace('m', mins)
-      .replace('s', secs);
+      .replace(/s/g, secs);
 
     console.log(output);
   }
 
-  this.stop = function() {
-    clearInterval(timer);
-  };
+  // this.stop = function() {
+  //   clearInterval(timer);
+  // };
 
   this.start = function() {
     render();
